@@ -43,7 +43,7 @@ namespace DKYChessPieces4WPF
         {
             if (currentChess == null)
             {
-               // MessageBox.Show((sender as Label).Content.ToString());
+                // MessageBox.Show((sender as Label).Content.ToString());
             }
             else
             {
@@ -96,7 +96,7 @@ namespace DKYChessPieces4WPF
                         }
                         break;
 
-                    default: 
+                    default:
                         break;
                 }
 
@@ -182,7 +182,7 @@ namespace DKYChessPieces4WPF
             }
         }
         private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {     
+        {
             var image = (sender as Image);
             chessPieces.Delete(image.Name);
             Grid.SetColumn(image, 0);
@@ -205,13 +205,30 @@ namespace DKYChessPieces4WPF
         {
             chessPieces.Clear();
             currentChess = null;
-            
-            foreach(var image in images)
+
+            foreach (var image in images)
             {
                 image.Visibility = Visibility.Hidden;
                 Grid.SetColumn(image, 0);
                 Grid.SetRow(image, 10);
             }
+        }
+
+        private void ShowRules(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Король передвигается на одну клетку, но в любом направлении.\n"
+                + "Это необходимо для того, чтобы недопустить мата после получения шаха от соперника.\n\n"
+                + "Ферзь перемещается в любом направлении на нужное количество клеток. Он считается самой ценной фигурой на доске.\n\n"
+                + "Слон движется по диагонали на любое количество клеток. Черный слон передвигается по черным клеткам, а белый слон "
+                + "соответственно – по белым.\n\n"
+                + "Конь ходит буквой «Г» на 3 клетки. Главной его особенностью является то, что он может перепрыгивать через любые\n"
+                + "препятствия, что непозволительно даже ферзю. Такая способность коня является очень ценной.\n\n"
+                + "Ладья может двигаться по прямой, по вертикали или горизонтали - то есть либо вперед, либо назад, но на любое количество клеток.\n\n"
+                + "Пешка ходит на одну клетку вперед.\n\n"
+                + "                Управление    \n\n"
+                + "Чтобы добавить фигуру выберите её в разделе \"Chess pieces\"\n\n"
+                + "Чтобы сделать ход фигурой, щелкните на нее (подсветится) и выберите куда хотите сходить, если не получилось, то фигура туда сходить не может\n\n"
+                + "Чтобы удалить конкретную фигуру нажмите на нее ПКМ, чтобы удалить все фигуры нажмите Desk/Clear","Rules");
         }
     }
 }

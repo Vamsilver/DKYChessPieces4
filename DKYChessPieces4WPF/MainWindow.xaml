@@ -96,6 +96,7 @@
             <MenuItem Header="Desk">
                 <MenuItem Header="Clear" Click="DeskClear"/>
             </MenuItem>
+            <MenuItem Header="Rules" Click="ShowRules"/>
         </Menu>
 
         <Label Style="{StaticResource labelWhite}" Content="18" Grid.Column="1" Grid.Row="2"/>
