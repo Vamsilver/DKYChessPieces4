@@ -152,8 +152,17 @@ namespace DKYChessPieces4WPF
         private void MenuItem_Click(string chessName, int x, int y)
         {
             var image = (Image)this.FindName(chessName);
+            var newChess = ChessFactory.MakeChess(chessName, x, y);
 
-            chessPieces.Add(ChessFactory.MakeChess(chessName, x, y));
+            if (chessPieces.Find(chessName) == null)
+            {
+                chessPieces.Add(newChess);
+            }
+            else
+            {
+                chessPieces.Replace(newChess);
+            }
+
             Grid.SetColumn(image, x);
             Grid.SetRow(image, 10 - y);
             image.Visibility = Visibility.Visible;
