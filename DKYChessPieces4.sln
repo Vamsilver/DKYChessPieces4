@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKYChessPieces3Console", "DKYChessPieces4\DKYChessPieces3Console.csproj", "{662ACE6F-C962-47EE-90FE-3C97105C2C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKYChessPieces3Console", "DKYChessPieces4\DKYChessPieces3Console.csproj", "{662ACE6F-C962-47EE-90FE-3C97105C2C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessCore", "ChessCore\ChessCore.csproj", "{5E0356F2-9A37-463D-BD46-949B43A54CAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessCore", "ChessCore\ChessCore.csproj", "{5E0356F2-9A37-463D-BD46-949B43A54CAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
