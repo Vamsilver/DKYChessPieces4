@@ -49,8 +49,7 @@
 
         <Style x:Key="Image" TargetType="Image">
             <EventSetter Event="MouseDown" Handler="Image_MouseLeftButtonDown"/>
-            <!--<EventSetter Event="MouseEnter" Handler="Image_MouseEnter"/>-->
-            <!--<EventSetter Event="MouseLeave" Handler="Image_MouseLeave"/>-->
+            <!--<EventSetter Event="MouseRightButtonDown" Handler="Image_MouseRightButtonDown"/>-->
             <Setter Property="Visibility" Value="Hidden"/>
             <Setter Property="Grid.Row" Value="10"/>
             <Setter Property="Grid.Column" Value="0"/>
@@ -87,7 +86,7 @@
         </Grid.RowDefinitions>
         <Menu Grid.ColumnSpan="10" Margin="0,0,0,0">
             <MenuItem Header="Chess pieces">
-                <MenuItem Header="Bishop" />
+                <MenuItem Header="Bishop" Click="MenuItemBishop_Click"/>
                 <MenuItem Header="Horse" Click="MenuItemHorse_Click"/>
                 <MenuItem Header="King" Click="MenuItemKing_Click"/>
                 <MenuItem Header="Queen"  Click="MenuItemQueen_Click"/>
@@ -212,6 +211,7 @@
         <Image x:Name="Horse" Style="{StaticResource Image}" Source="/Resources/Horse.png"/>
         <Image x:Name="King" Style="{StaticResource Image}" Source="/Resources/King.png"/>
         <Image x:Name="Pawn" Style="{StaticResource Image}" Source="/Resources/Pawn.png"/>
+        <Image x:Name="Bishop" Style="{StaticResource Image}" Source="/Resources/Bishop.png"/>
 
         <Border BorderBrush="Black" BorderThickness="2" Grid.Row="2" Grid.RowSpan="8" Grid.Column="1" Grid.ColumnSpan="8" IsEnabled="False" />
     </Grid>

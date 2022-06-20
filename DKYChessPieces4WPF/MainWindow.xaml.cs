@@ -81,6 +81,13 @@ namespace DKYChessPieces4WPF
                         }
                         break;
 
+                    case "Bishop":
+                        if (currentChess.TryMoveString(coords))
+                        {
+                            MoveChessWithImage("Bishop", coords, sender);
+                        }
+                        break;
+
                     default: 
                         break;
                 }
@@ -129,6 +136,11 @@ namespace DKYChessPieces4WPF
             MenuItem_Click("Pawn", 1, 2);
         }
 
+        private void MenuItemBishop_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem_Click("Bishop", 3, 1);
+        }
+
         private void MenuItem_Click(string chessName, int x, int y)
         {
             var image = (Image)this.FindName(chessName);
@@ -161,6 +173,17 @@ namespace DKYChessPieces4WPF
                 label.Background = Brushes.LightGreen;
             }
         }
+
+
+        //private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    chessPieces.Delete();
+        //    currentChess = null;
+        //    var image = (sender as Image);
+        //    Grid.SetColumn(image, 1);
+        //    Grid.SetRow(image, 10);
+        //    image.Visibility = Visibility.Visible;
+        //}
 
         private UIElement GetElementInGridPosition(int column, int row)
         {

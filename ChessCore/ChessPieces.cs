@@ -41,9 +41,32 @@ namespace ChessCore
             return null;
         }
 
+        public ChessPiece Find(string chessName)
+        {
+            foreach (var s in chesses)
+            {
+                if (chessName.Equals(s.GetName()))
+                {
+                    return s;
+                }
+            }
+
+            return null;
+        }
+
         public void Delete(ChessPiece chess)
         {
             ChessPiece chess2 = Find(chess);
+
+            if (chess2 != null)
+            {
+                chesses.Remove(chess2);
+            }
+        }
+
+        public void Delete(string chessName)
+        {
+            ChessPiece chess2 = Find(chessName);
 
             if (chess2 != null)
             {
