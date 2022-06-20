@@ -91,7 +91,7 @@
                 <MenuItem Header="Horse" />
                 <MenuItem Header="King"/>
                 <MenuItem Header="Queen"  Click="MenuItemQueen_Click"/>
-                <MenuItem Header="Rook"/>
+                <MenuItem Header="Rook" Click="MenuItemRook_Click"/>
                 <MenuItem Header="Pawn"/>
             </MenuItem>
             <MenuItem Header="Desk">
@@ -208,6 +208,7 @@
         <Label Style="{StaticResource labelMarkingInverted}" Content="H" Grid.Row="1" Grid.Column="8"/>
 
         <Image x:Name="Queen" Style="{StaticResource Image}" Source="/Resources/Queen.png"/>
+        <Image x:Name="Rook" Style="{StaticResource Image}" Source="/Resources/Rook.png"/>
 
         <Border BorderBrush="Black" BorderThickness="2" Grid.Row="2" Grid.RowSpan="8" Grid.Column="1" Grid.ColumnSpan="8" IsEnabled="False" />
     </Grid>

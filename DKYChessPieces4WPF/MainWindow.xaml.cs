@@ -39,21 +39,35 @@ namespace DKYChessPieces4WPF
             }
             else
             {
+                string coords = (sender as Label).Content.ToString();
+                int pastX = currentChess.GetX();
+                int pastY = currentChess.GetY();
+
                 switch (currentChess.GetName())
                 {
                     case "Queen":
-                        string coords = (sender as Label).Content.ToString();
                         if (currentChess.TryMoveString(coords))
                         {
-                            int x = currentChess.GetX();
-                            int y = currentChess.GetY();
-                            (GetElementInGridPosition(x,10 - y) as Label).Background = (x + y) % 2 == 0 ? Brushes.Black : Brushes.White;
                             currentChess.Move(coords);
+                            chessPieces.Replace(currentChess);
                             UpdateImage("Queen", sender);
-                            
                         }
                         break;
+                    case "Rook":
+                        if (currentChess.TryMoveString(coords))
+                        {
+                            currentChess.Move(coords);
+                            chessPieces.Replace(currentChess);
+                            UpdateImage("Rook", sender);
+                        }
+                        break;
+
+                    default: 
+                        break;
                 }
+
+                (GetElementInGridPosition(pastX, 10 - pastY) as Label).Background = (pastX + pastY) % 2 == 0 ? Brushes.Black : Brushes.White;
+                currentChess = null;
             }
         }
 
@@ -70,6 +84,14 @@ namespace DKYChessPieces4WPF
             Grid.SetColumn(Queen, 5);
             Grid.SetRow(Queen, 9);
             Queen.Visibility = Visibility.Visible;
+        }
+
+        private void MenuItemRook_Click(object sender, RoutedEventArgs e)
+        {
+            chessPieces.Add(ChessFactory.MakeChess("Rook", "11"));
+            Grid.SetColumn(Rook, 1);
+            Grid.SetRow(Rook, 9);
+            Rook.Visibility = Visibility.Visible;
         }
 
         private int GetRow(object sender)
@@ -90,10 +112,6 @@ namespace DKYChessPieces4WPF
             currentChess = ChessFactory.MakeChess((sender as Image).Name,label.Content.ToString());
 
             label.Background = Brushes.LightGreen;
-
-            //MessageBox.Show(currentChess.GetName());
-            //Label_MouseLeftButtonDown((GetElementInGridPosition(Grid.GetColumn(sender as Image), 
-            //                                                    Grid.GetRow(sender as Image)) as object), e);
         }
 
         private UIElement GetElementInGridPosition(int column, int row)

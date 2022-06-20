@@ -28,6 +28,30 @@ namespace ChessCore
             }
         }
 
+        public ChessPiece Find(ChessPiece chess)
+        {
+            foreach(var s in chesses)
+            {
+                if(chess.GetName().Equals(s.GetName()))
+                {
+                    return s;
+                }
+            }
+
+            return null;
+        }
+
+        public void Replace(ChessPiece chess)
+        {
+            ChessPiece chess2 = Find(chess);
+
+            if(chess2 != null)
+            {
+                chesses.Remove(chess2);
+                chesses.Add(chess);
+            }
+        }
+
         public void Clear()
         {
             chesses.Clear();
