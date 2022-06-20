@@ -173,17 +173,14 @@ namespace DKYChessPieces4WPF
                 label.Background = Brushes.LightGreen;
             }
         }
-
-
-        //private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    chessPieces.Delete();
-        //    currentChess = null;
-        //    var image = (sender as Image);
-        //    Grid.SetColumn(image, 1);
-        //    Grid.SetRow(image, 10);
-        //    image.Visibility = Visibility.Visible;
-        //}
+        private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {     
+            var image = (sender as Image);
+            chessPieces.Delete(image.Name);
+            Grid.SetColumn(image, 0);
+            Grid.SetRow(image, 10);
+            image.Visibility = Visibility.Hidden;
+        }
 
         private UIElement GetElementInGridPosition(int column, int row)
         {

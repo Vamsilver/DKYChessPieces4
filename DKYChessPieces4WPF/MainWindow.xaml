@@ -48,8 +48,8 @@
         </Style>
 
         <Style x:Key="Image" TargetType="Image">
-            <EventSetter Event="MouseDown" Handler="Image_MouseLeftButtonDown"/>
-            <!--<EventSetter Event="MouseRightButtonDown" Handler="Image_MouseRightButtonDown"/>-->
+            <EventSetter Event="MouseLeftButtonDown" Handler="Image_MouseLeftButtonDown"/>
+            <EventSetter Event="MouseRightButtonDown" Handler="Image_MouseRightButtonDown"/>
             <Setter Property="Visibility" Value="Hidden"/>
             <Setter Property="Grid.Row" Value="10"/>
             <Setter Property="Grid.Column" Value="0"/>

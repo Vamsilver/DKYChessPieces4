@@ -24,7 +24,7 @@ namespace ChessCore
 
         protected override bool isRightMove(int x2, int y2)
         {
-            return x == x2 && y2 - y <= 1;
+            return x == x2 && y2 - y <= 1 && y2 - y > 0;
         }
     }
 }
