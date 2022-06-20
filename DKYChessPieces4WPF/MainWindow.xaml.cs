@@ -74,6 +74,13 @@ namespace DKYChessPieces4WPF
                         }
                         break;
 
+                    case "Pawn":
+                        if (currentChess.TryMoveString(coords))
+                        {
+                            MoveChessWithImage("Pawn", coords, sender);
+                        }
+                        break;
+
                     default: 
                         break;
                 }
@@ -115,6 +122,11 @@ namespace DKYChessPieces4WPF
         private void MenuItemKing_Click(object sender, RoutedEventArgs e)
         {
             MenuItem_Click("King", 5, 1);
+        }
+
+        private void MenuItemPawn_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem_Click("Pawn", 1, 2);
         }
 
         private void MenuItem_Click(string chessName, int x, int y)
