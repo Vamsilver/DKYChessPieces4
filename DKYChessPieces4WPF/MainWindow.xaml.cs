@@ -48,25 +48,29 @@ namespace DKYChessPieces4WPF
                     case "Queen":
                         if (currentChess.TryMoveString(coords))
                         {
-                            currentChess.Move(coords);
-                            chessPieces.Replace(currentChess);
-                            UpdateImage("Queen", sender);
+                            MoveChessWithImage("Queen", coords, sender);
                         }
                         break;
+
                     case "Rook":
+
                         if (currentChess.TryMoveString(coords))
                         {
-                            currentChess.Move(coords);
-                            chessPieces.Replace(currentChess);
-                            UpdateImage("Rook", sender);
+                            MoveChessWithImage("Rook", coords, sender);
                         }
                         break;
+
                     case "Horse":
                         if (currentChess.TryMoveString(coords))
                         {
-                            currentChess.Move(coords);
-                            chessPieces.Replace(currentChess);
-                            UpdateImage("Horse", sender);
+                            MoveChessWithImage("Horse", coords, sender);
+                        }
+                        break;
+
+                    case "King":
+                        if (currentChess.TryMoveString(coords))
+                        {
+                            MoveChessWithImage("King", coords, sender);
                         }
                         break;
 
@@ -79,6 +83,13 @@ namespace DKYChessPieces4WPF
             }
         }
 
+        private void MoveChessWithImage(string imageName, string coords, object sender)
+        {
+            currentChess.Move(coords);
+            chessPieces.Replace(currentChess);
+            UpdateImage(imageName, sender);
+        }
+
         private void UpdateImage(string imageName, object sender)
         {
             var image = (Image)this.FindName(imageName);
@@ -88,26 +99,32 @@ namespace DKYChessPieces4WPF
 
         private void MenuItemQueen_Click(object sender, RoutedEventArgs e)
         {
-            chessPieces.Add(ChessFactory.MakeChess("Queen", "51"));
-            Grid.SetColumn(Queen, 5);
-            Grid.SetRow(Queen, 9);
-            Queen.Visibility = Visibility.Visible;
+            MenuItem_Click("Queen", 4, 1);
         }
 
         private void MenuItemRook_Click(object sender, RoutedEventArgs e)
         {
-            chessPieces.Add(ChessFactory.MakeChess("Rook", "11"));
-            Grid.SetColumn(Rook, 1);
-            Grid.SetRow(Rook, 9);
-            Rook.Visibility = Visibility.Visible;
+            MenuItem_Click("Rook", 1, 1);
         }
 
         private void MenuItemHorse_Click(object sender, RoutedEventArgs e)
         {
-            chessPieces.Add(ChessFactory.MakeChess("Horse", "21"));
-            Grid.SetColumn(Horse, 2);
-            Grid.SetRow(Horse, 9);
-            Horse.Visibility = Visibility.Visible;
+            MenuItem_Click("Horse", 2, 1);
+        }
+
+        private void MenuItemKing_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem_Click("King", 5, 1);
+        }
+
+        private void MenuItem_Click(string chessName, int x, int y)
+        {
+            var image = (Image)this.FindName(chessName);
+
+            chessPieces.Add(ChessFactory.MakeChess(chessName, x, y));
+            Grid.SetColumn(image, x);
+            Grid.SetRow(image, 10 - y);
+            image.Visibility = Visibility.Visible;
         }
 
         private int GetRow(object sender)

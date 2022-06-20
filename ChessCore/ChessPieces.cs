@@ -41,6 +41,16 @@ namespace ChessCore
             return null;
         }
 
+        public void Delete(ChessPiece chess)
+        {
+            ChessPiece chess2 = Find(chess);
+
+            if (chess2 != null)
+            {
+                chesses.Remove(chess2);
+            }
+        }
+
         public void Replace(ChessPiece chess)
         {
             ChessPiece chess2 = Find(chess);

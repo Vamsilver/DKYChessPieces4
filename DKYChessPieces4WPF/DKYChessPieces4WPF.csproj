@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Horse.png" />
+    <None Remove="Resources\King.png" />
     <None Remove="Resources\Queen.png" />
     <None Remove="Resources\Rook.png" />
   </ItemGroup>
@@ -18,6 +19,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\Horse.png" />
+    <Resource Include="Resources\King.png" />
     <Resource Include="Resources\Queen.png" />
     <Resource Include="Resources\Rook.png" />
   </ItemGroup>
