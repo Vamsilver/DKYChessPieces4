@@ -11,6 +11,7 @@ namespace ChessCore
 {
     public class ChessPiece
     {
+        protected string name;
         protected int x; 
         protected int y; 
 
@@ -67,6 +68,14 @@ namespace ChessCore
 
         public void Move(string position)
         {
+            int x2 = int.Parse(position[0].ToString());
+            int y2 = int.Parse(position[1].ToString());
+
+            Move(x2, y2);
+        }
+
+        public void MoveFirstChar(string position)
+        {
             int x2 = positionsCharInt[position[0]];
             int y2 = int.Parse(position[1].ToString());
 
@@ -108,6 +117,11 @@ namespace ChessCore
         public string GetPosition()
         {
             return positionsIntChar[x] + "" + y;
+        }
+
+        public string GetName()
+        {
+            return name;
         }
     }
 }

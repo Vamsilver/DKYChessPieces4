@@ -14,12 +14,14 @@ namespace ChessCore
         {
             this.x = x;
             this.y = y;
+            this.name = "King";
         }
 
         public King(string str) : base(str)
         {
             this.x = positionsCharInt[str[0]];
             this.y = int.Parse(str[1].ToString());
+            this.name = "King";
         }
 
         protected override bool isRightMove(int x2, int y2)

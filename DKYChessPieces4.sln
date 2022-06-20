@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKYChessPieces3Console", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessCore", "ChessCore\ChessCore.csproj", "{5E0356F2-9A37-463D-BD46-949B43A54CAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKYChessPieces4WPF", "DKYChessPieces4WPF\DKYChessPieces4WPF.csproj", "{7FF7F19E-CFD5-4FE0-8D38-79D6DF1FFD04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5E0356F2-9A37-463D-BD46-949B43A54CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0356F2-9A37-463D-BD46-949B43A54CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E0356F2-9A37-463D-BD46-949B43A54CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF7F19E-CFD5-4FE0-8D38-79D6DF1FFD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF7F19E-CFD5-4FE0-8D38-79D6DF1FFD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF7F19E-CFD5-4FE0-8D38-79D6DF1FFD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF7F19E-CFD5-4FE0-8D38-79D6DF1FFD04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
