@@ -61,6 +61,14 @@ namespace DKYChessPieces4WPF
                             UpdateImage("Rook", sender);
                         }
                         break;
+                    case "Horse":
+                        if (currentChess.TryMoveString(coords))
+                        {
+                            currentChess.Move(coords);
+                            chessPieces.Replace(currentChess);
+                            UpdateImage("Horse", sender);
+                        }
+                        break;
 
                     default: 
                         break;
@@ -94,6 +102,14 @@ namespace DKYChessPieces4WPF
             Rook.Visibility = Visibility.Visible;
         }
 
+        private void MenuItemHorse_Click(object sender, RoutedEventArgs e)
+        {
+            chessPieces.Add(ChessFactory.MakeChess("Horse", "21"));
+            Grid.SetColumn(Horse, 2);
+            Grid.SetRow(Horse, 9);
+            Horse.Visibility = Visibility.Visible;
+        }
+
         private int GetRow(object sender)
         {
             return Grid.GetRow(sender as Label);
@@ -106,12 +122,15 @@ namespace DKYChessPieces4WPF
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var label = GetElementInGridPosition(Grid.GetColumn(sender as Image),
-                Grid.GetRow(sender as Image)) as Label;
+            if (currentChess == null)
+            {
+                var label = GetElementInGridPosition(Grid.GetColumn(sender as Image),
+                    Grid.GetRow(sender as Image)) as Label;
 
-            currentChess = ChessFactory.MakeChess((sender as Image).Name,label.Content.ToString());
+                currentChess = ChessFactory.MakeChess((sender as Image).Name, label.Content.ToString());
 
-            label.Background = Brushes.LightGreen;
+                label.Background = Brushes.LightGreen;
+            }
         }
 
         private UIElement GetElementInGridPosition(int column, int row)
