@@ -23,12 +23,20 @@ namespace DKYChessPieces4WPF
     {
         ChessPieces chessPieces;
         ChessPiece currentChess;
+        List<Image> images;
 
         public MainWindow()
         {
             chessPieces = new ChessPieces();
             currentChess = null;
+            images = new List<Image>();
             InitializeComponent();
+            images.Add(Horse);
+            images.Add(Bishop);
+            images.Add(King);
+            images.Add(Pawn);
+            images.Add(Queen);
+            images.Add(Rook);
         }
 
         private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -191,6 +199,19 @@ namespace DKYChessPieces4WPF
             }
 
             return null;
+        }
+
+        private void DeskClear(object sender, RoutedEventArgs e)
+        {
+            chessPieces.Clear();
+            currentChess = null;
+            
+            foreach(var image in images)
+            {
+                image.Visibility = Visibility.Hidden;
+                Grid.SetColumn(image, 0);
+                Grid.SetRow(image, 10);
+            }
         }
     }
 }

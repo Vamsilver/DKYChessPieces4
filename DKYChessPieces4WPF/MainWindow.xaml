@@ -94,7 +94,7 @@
                 <MenuItem Header="Pawn" Click="MenuItemPawn_Click"/>
             </MenuItem>
             <MenuItem Header="Desk">
-                <MenuItem Header="Clear"/>
+                <MenuItem Header="Clear" Click="DeskClear"/>
             </MenuItem>
         </Menu>
 
